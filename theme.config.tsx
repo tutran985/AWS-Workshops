@@ -32,7 +32,8 @@ const config: DocsThemeConfig = {
   navigation: {
     prev: true,
     next: true
-  }
+  },
+  darkMode: false
 }
 
 export default config
