@@ -1,0 +1,84 @@
+## 2: Tạo giao diện người dùng cho ứng dụng
+1. Trên máy cục bộ của bạn, điều hướng đến tệp `new-react-app/src/index.css`, và cập nhật nó với mã sau để thiết lập style cho giao diện người dùng của ứng dụng Ghi chú. Sau đó, lưu tệp lại.
+
+```css copy
+/* index.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.note-form input,
+.note-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.note-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background-color: #0056b3;
+}
+
+.note-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.note-item h2 {
+  margin: 0;
+  color: #007bff;
+}
+
+.note-item p {
+  margin: 5px 0;
+}
+
+.note-item button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note-item button:hover {
+  background-color: #c82333;
+}

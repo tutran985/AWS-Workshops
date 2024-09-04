@@ -1,0 +1,32 @@
+## 2: Thiết lập Amplify Data
+
+Ứng dụng bạn sẽ xây dựng là một ứng dụng Ghi chú cho phép người dùng tạo,
+ xóa và liệt kê các ghi chú.
+  Ứng dụng ví dụ này sẽ giúp bạn học cách xây dựng nhiều loại ứng dụng CRUD+L
+   (tạo, đọc, cập nhật, xóa và liệt kê) phổ biến.
+
+1. Trên máy cục bộ của bạn, điều hướng đến tệp `new-react-app/amplify/data/resource.ts` và cập nhật nó với mã sau. Sau đó, lưu tệp lại.
+- Mã cập nhật sau sử dụng quy tắc xác thực per-owner `allow.owner()` để hạn chế quyền truy cập vào bản ghi ghi chú của chủ sở hữu bản ghi.
+- Amplify sẽ tự động thêm trường `owner: a.string()` vào mỗi ghi chú, trường này chứa thông tin nhận dạng của chủ sở hữu ghi chú khi tạo bản ghi.
+```typescript copy
+import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
+
+const schema = a.schema({
+  Note: a
+    .model({
+      name:a.string(),
+      description: a.string(),
+      image: a.string(),
+    })
+    .authorization((allow) => [allow.owner()]),
+});
+
+export type Schema = ClientSchema<typeof schema>;
+
+export const data = defineData({
+  schema,
+  authorizationModes: {
+    defaultAuthorizationMode: 'userPool',
+  },
+});
+```

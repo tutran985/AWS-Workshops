@@ -1,0 +1,22 @@
+## 3: Thiết lập Amplify Storage
+
+1. Trên máy cục bộ của bạn, 
+điều hướng đến thư mục `new-react-app/amplify`,
+ và tạo một thư mục mới có tên là `storage`,
+  sau đó tạo một tệp có tên là `resource.ts` bên trong thư mục storage mới.
+
+2. Cập nhật tệp `new-react-app/storage/resource.ts` với mã sau để cấu hình tài nguyên lưu trữ cho ứng dụng của bạn. Sau đó, lưu tệp lại.
+- Mã cập nhật sẽ thiết lập quyền truy cập để chỉ người tải lên hình ảnh mới có thể truy cập. Mã sẽ sử dụng `entity_id` như một token dự trữ sẽ được thay thế bằng thông tin nhận dạng của người dùng khi tệp được tải lên.
+```typescript copy
+import { defineStorage } from "@aws-amplify/backend";
+
+export const storage = defineStorage({
+  name: "amplifyNotesDrive",
+  access: (allow) => ({
+    "media/{entity_id}/*": [
+      allow.entity("identity").to(["read", "write", "delete"]),
+    ],
+  }),
+});
+
+```

@@ -1,0 +1,6 @@
+{
+    "step1": "1. Thiết lập Amplify Auth",
+    "step2": "2. Thiết lập Amplify Data",
+    "step3": "3. Thiết lập Amplify Stogare",
+    "step4": "4. Triển khai Amplify Clound sandbox"
+}

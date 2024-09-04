@@ -1,0 +1,16 @@
+## 1: Thiết lập Amplify Auth
+Ứng dụng sử dụng email làm cơ chế đăng nhập mặc định. Khi người dùng đăng ký, họ sẽ nhận được một email xác minh.
+1. Theo mặc định, tài nguyên xác thực của bạn được cấu hình như hiển thị trong tệp ` new-react-app/amplify/auth/resource.ts`. Đối với hướng dẫn này, hãy giữ nguyên cấu hình xác thực mặc định.
+```typescript copy
+import { defineAuth } from '@aws-amplify/backend';
+
+/**
+ * Define and configure your auth resource
+ * @see https://docs.amplify.aws/gen2/build-a-backend/auth
+ */
+export const auth = defineAuth({
+  loginWith: {
+    email: true,
+  },
+});
+```

@@ -1,0 +1,36 @@
+## 2: Khởi tạo một kho lưu trữ GitHub
+Trong bước này, bạn sẽ tạo một kho lưu trữ GitHub và 
+commit mã của bạn vào kho lưu trữ. 
+Bạn sẽ cần một tài khoản GitHub để hoàn thành bước này, 
+nếu bạn chưa có tài khoản, hãy đăng ký tại đây.
+
+> **Lưu ý:**
+> Nếu bạn chưa từng sử dụng GitHub trên máy tính của mình,
+> hãy làm theo các bước sau trước khi tiếp tục để cho phép kết nối với tài khoản của bạn
+
+### 1. Đăng nhập vào GitHub tại https://github.com/. 
+![step-2-1](../../../images/task-1-step21.png)
+
+### 2. Tạo 1 repository mới tại: https://github.com/new
+- Điền tên repository vào ô "Repository name" ở đây tôi sẽ đặt tên là `new-react-app`.
+- Điền mô tả vào ô "Description" (không bắt buộc).
+- Chọn "Public" hoặc "Private" tùy theo nhu cầu của bạn.
+- Chọn "Initialize this repository with a README" để tạo file README.md.
+- Chọn "Add .gitignore" và chọn "Node" để tạo file .gitignore cho Node.js.
+- Chọn "Add a license" và chọn "MIT License" để tạo file LICENSE.md.
+- Nhấn "Create repository" để tạo repository.
+![step-2-2](../../../images/create-new-repo.png)
+
+### 3. Mở một cửa sổ terminal mới, điều hướng đến thư mục gốc của dự án của bạn (`new-react-app`), và chạy các lệnh sau để khởi tạo git và đẩy ứng dụng lên kho lưu trữ GitHub mới:
+> **Lưu ý:**
+> Thay thế URL SSH GitHub trong lệnh bằng URL GitHub của bạn.
+
+```bash copy
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:tutran985/new-react-app.git
+git push -u origin main
+```
+

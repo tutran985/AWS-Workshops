@@ -1,0 +1,6 @@
+{
+    "step1": "1. Tạo một ứng dụng React mới",
+    "step2": "2. Khởi tạo một kho lưu trữ GitHub",
+    "step3": "3. Cài đặt các gói Amplify",
+    "step4": "4. Triển khai ứng dụng của bạn với AWS Amplify"
+}
