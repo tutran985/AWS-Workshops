@@ -33,7 +33,11 @@ const config: DocsThemeConfig = {
     prev: true,
     next: true
   },
-  darkMode: false
+  darkMode: false,
+  sidebar: {
+    autoCollapse: true,
+    toggleButton: true
+  }
 }
 
 export default config
