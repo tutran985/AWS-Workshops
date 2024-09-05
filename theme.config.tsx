@@ -32,6 +32,9 @@ const config: DocsThemeConfig = {
   navigation: {
     prev: true,
     next: true
+  },
+  nextThemes: {
+    defaultTheme: 'light'
   }
 }
 
