@@ -1,6 +1,7 @@
 {
     "index": {
-        "display": "hidden"
+        "display": "hidden",
+        "title": "Tutorials"
     },
     "build-a-react-app": "Build a Full-Stack React Application with Amplify"
 }

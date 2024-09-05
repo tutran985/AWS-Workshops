@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './TutorialList.module.css'; // Update the import path
+import styles from './TutorialList.module.css';
+import { useTheme } from 'next-themes'; // Import useTheme hook from next-themes
 
-// Sample data for tutorial listings
 const tutorials = [
     {
         title: "Build a Web Application on AWS Amplify",
@@ -9,28 +9,32 @@ const tutorials = [
         category: "FRONT-END WEB & MOBILE, SERVERLESS",
         description: "Learn how to build and deploy a React web application with user authentication, a database, and storage using AWS Amplify.",
         duration: "30 minutes",
-        new: true
+        status: "NEW"
     }
 ];
 
-const TutorialList = () => (
-    <div className={styles.tutorialList}>
-        {tutorials.map((tutorial, index) => (
-            <div className={styles.tutorialCard} key={index}>
-                <div className={styles.category}>
-                    {tutorial.category}
-                    {tutorial.new && <span className={`${styles.tag} ${styles.newTag}`}>NEW</span>}
-                    {tutorial.updated && !tutorial.new && <span className={`${styles.tag} ${styles.updatedTag}`}>UPDATED</span>}
+const TutorialList = () => {
+    const { theme, systemTheme } = useTheme(); // Get the current theme and system theme
+
+    const effectiveTheme = theme === 'system' ? systemTheme : theme; // Determine the effective theme
+
+    return (
+        <div className={`${styles.tutorialList} ${effectiveTheme === 'dark' ? styles.dark : ''}`}>
+            {tutorials.map((tutorial, index) => (
+                <div className={`${styles.tutorialCard} ${effectiveTheme === 'dark' ? styles.dark : ''}`} key={index}>
+                    <div className={`${styles.category} ${effectiveTheme === 'dark' ? styles.dark : ''}`}>
+                        {tutorial.category}
+                        <span className={`${styles.tag} ${styles.newTag}`}>{tutorial.status}</span>
+                    </div>
+                    <div className={`${styles.horizontalRule} ${effectiveTheme === 'dark' ? styles.dark : ''}`}></div>
+                    <a href={tutorial.url} className={`${styles.title} ${effectiveTheme === 'dark' ? styles.dark : ''}`}>{tutorial.title}</a>
+                    <p className={`${styles.description} ${effectiveTheme === 'dark' ? styles.dark : ''}`}>{tutorial.description}</p>
+                    <div className={`${styles.horizontalRule} ${effectiveTheme === 'dark' ? styles.dark : ''}`}></div>
+                    <div className={`${styles.duration} ${effectiveTheme === 'dark' ? styles.dark : ''}`}>{tutorial.duration}</div>
                 </div>
-                <div className={styles.categoryRule}></div>  {/* Horizontal rule added here */}
-                <a href={tutorial.url} className={styles.title}>{tutorial.title}</a>
-                <p className={styles.description}>{tutorial.description}</p>
-                <div className={styles.horizontalRule}></div>  {/* Horizontal rule for separating description from duration */}
-                <div className={styles.duration}>{tutorial.duration}</div>
-            </div>
-        ))}
-    </div>
-);
-TutorialList.theme = 'light'
+            ))}
+        </div>
+    );
+};
 
 export default TutorialList;

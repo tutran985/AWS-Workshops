@@ -33,8 +33,9 @@ const config: DocsThemeConfig = {
     prev: true,
     next: true
   },
-  nextThemes: {
-    defaultTheme: 'light'
+  sidebar: {
+    toggleButton: true,
+    defaultMenuCollapseLevel: 1,
   }
 }
 
