@@ -35,7 +35,7 @@ const config: DocsThemeConfig = {
   },
   darkMode: false,
   sidebar: {
-    autoCollapse: true
+    toggleButton: true
   }
 }
 
