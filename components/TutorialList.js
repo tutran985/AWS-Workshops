@@ -31,6 +31,6 @@ const TutorialList = () => (
         ))}
     </div>
 );
-
+TutorialList.theme = 'light'
 
 export default TutorialList;
