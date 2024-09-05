@@ -32,10 +32,6 @@ const config: DocsThemeConfig = {
   navigation: {
     prev: true,
     next: true
-  },
-  darkMode: false,
-  sidebar: {
-    toggleButton: true
   }
 }
 
